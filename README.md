@@ -1,20 +1,7 @@
-# Install
+Watchfolio: A repository for a full stack site that let's you interact with other fellow watch lovers!
 
-`npm install`
+How It's Made: Tech used: JavaScript, EJS
 
----
+Optimizations: I consistently refactor and optimize my code, sometimes for efficiency, sometimes for readability. I would like to spend more time with styling to make the site more appealing.
 
-# Things to add
-
-- Create a `.env` file in config folder and add the following as `key = value`
-  - PORT = 2121 (can be any port example: 3000)
-  - DB_STRING = `your database URI`
-  - CLOUD_NAME = `your cloudinary cloud name`
-  - API_KEY = `your cloudinary api key`
-  - API_SECRET = `your cloudinary api secret`
-
----
-
-# Run
-
-`npm start`
+Lessons Learned: Making sure my routes are set up correctly or else my code won't work!

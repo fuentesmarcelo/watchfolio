@@ -1,0 +1,67 @@
+<%- include('partials/header') -%>
+<%- include('partials/navbar') -%>  <!-- Add this line -->
+<div class="container mt-5">
+  <div class="row">
+    <!-- User Profile Card
+    <div class="col-md-4">
+      <div class="card shadow-sm p-4 rounded-3">
+        <p class="fs-5 text-center">Welcome back, <strong><%= user.userName %></strong></p>
+        <div class="d-grid gap-2">
+          <a class="btn btn-outline-primary" href="/feed">Return to Feed</a>
+          <a href="/logout" class="btn btn-danger">Logout</a>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Add Post Form -->
+    <div class="col-md-8">
+      <div class="card shadow-sm p-4 rounded-3">
+        <h3 class="text-center mb-3">Add a Post</h3>
+        <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title">
+          </div>
+          <div class="mb-3">
+            <label for="caption" class="form-label">Caption</label>
+            <textarea class="form-control" id="caption" name="caption"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="imgUpload" class="form-label">Image</label>
+            <input type="file" class="form-control" id="imageUpload" name="file">
+          </div>
+          <button type="submit" class="btn btn-success w-100">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- My Posts Section -->
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <div class="card shadow-sm p-4 rounded-3">
+        <h3 class="text-center mb-4">My Posts</h3>
+        <div class="row g-4">
+          <% for (var i = 0; i < posts.length; i++) { %>
+            <div class="col-md-4">
+              <div class="card shadow-sm border-0 rounded-3 overflow-hidden">
+                <a href="/post/<%= posts[i]._id %>">
+                  <img class="card-img-top" src="<%= posts[i].image %>" alt="Post Image" style="height: 250px; object-fit: cover; transition: transform 0.3s;">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title"><%= posts[i].title %></h5>
+                  <p class="card-text text-muted"><%= posts[i].text %></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-secondary">❤️ <%= posts[i].likes %> Likes</span>
+                    <a href="/post/<%= posts[i]._id %>/edit" class="btn btn-sm btn-warning">Edit</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>

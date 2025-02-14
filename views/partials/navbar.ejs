@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+
+      <!-- Welcome Message (Responsive) -->
+      <span class="d-none d-lg-block text-secondary">Welcome back, <strong><%= user.userName %>!</strong></span>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link btn btn-navbar" href="/feed">Feed</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link btn btn-navbar" href="/profile">Profile</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link btn btn-navbar btn-outline-danger" href="/logout">Logout</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
